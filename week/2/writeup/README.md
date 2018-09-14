@@ -6,7 +6,7 @@ Section: 0101
 
 I pledge on my honor that I have not given or received any unauthorized assistance on this assignment or examination.
 
-Digital acknowledgement of honor pledge: Hope Winovich 
+Digital acknowledgement of honor pledge: Hope Winovich
 
 ## Assignment 2 writeup
 
@@ -22,7 +22,7 @@ Twitter - kruegster1990 (looked it up on twitter)
 
 3.   I typed 'nslookup www.cornerstoneairlines' into my terminal and the ip address comes up as 142.93.118.186.
 
-4.   <!-- CMSC389R-{h1dden_fl4g_in_s0urce} -->
+4.   !-- CMSC389R-{h1dden_fl4g_in_s0urce} --
 
 5.   Site24x7 also shows the same ip address as above
   142.93.117.193 is the ip address in the source code for the admin page
