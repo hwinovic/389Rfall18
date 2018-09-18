@@ -19,7 +19,7 @@ The submission should be answered in bullet form or full, grammatical sentences.
 
 ### Scoring
 
-Part 1 is worth 100 points. The rubric with our expectations can be found on the ELMS assignment posting. 
+Part 1 is worth 100 points. The rubric with our expectations can be found on the ELMS assignment posting.
 
 
 Good luck!
