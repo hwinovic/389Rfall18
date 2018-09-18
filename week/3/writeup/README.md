@@ -12,6 +12,7 @@ Digital acknowledgement of honor pledge: Hope Winovich
 
 ### Part 1 (100 pts)
 Vulnerability 1: Weak password
+
   The first vulnerability of Fred Krueger's company web server is his password. He chose to
 go with a common password that is in the rockyou.txt file containing the most commonly used
 passwords. Further, his personal Instagram account was full of pictures of Pokemon and
@@ -24,7 +25,9 @@ multiple random symbols, a big number of characters, both capital and lower case
 a random number. Algorithms can be easily written by hackers to crack common passwords so it
 is extremely important to come up with a strong password and make sure to never stay logged in
 on your computer and never tell someone the password.
+
 Vulnerability 2: Open Ports
+
   Another vulnerability that www.cornerstoneairlines.co had was its multiple open ports.
 Although it is normal to have a few open ports due to programs listening on those ports,
 it is not safe to have unused ports open especially when there is no firewall. I suggest
@@ -34,7 +37,10 @@ manually open and close ports with new rules within the windows firewall. This m
 a handy tip to close some of the ports that were opened. I was able to hack in through
 port 1337 so that would be where Fred Krueger should start with closing that port through
 the firewall.
+
+
 Vulnerability 3: Professional Email Address
+
   One last vulnerability for Cornerstone Airlines is the use of Fred Krueger's personal
 email as his contact information for the company. A more professional and low security
 risk email address would be something along the lines of "cornerstoneairlines@gmail.com".
